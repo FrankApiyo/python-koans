@@ -1,4 +1,4 @@
-"""Binary trees.
+r"""Binary trees.
 
 A tree is nodes joined by links, like a linked list except that each node
 points to up to two others, its left child and its right child. The top
@@ -14,9 +14,9 @@ child, just as it marked the end of a linked list.
 Every koan below uses this one tree, built by example_tree():
 
             8
-          /   \\
+          /   \
          3     10
-        / \\      \\
+        / \      \
        1   6      14
 
 It is a binary search tree, a BST: at every node, everything in the left

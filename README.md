@@ -9,7 +9,7 @@ hash maps, trees, heaps, graphs, and dynamic programming. Every file in
 run, read the next meditation. When every koan passes you are done, and you
 can wipe the answers and go again.
 
-There are about 200 koans in 20 chapters, planned as five mornings of two
+There are 215 koans in 20 chapters, planned as five mornings of two
 hours, four chapters a morning. Nothing needs a browser. Each file opens with
 a lesson, and each koan's meditation says what to do.
 
@@ -82,7 +82,7 @@ blank itself, not at the assertion below it:
 ------------------------------- The master says --------------------------------
 Meditate on koans/00_about_koans_test.py:34
     Implement Greeter.greet above. 1. Replace the whole __() line with a return of the string "hello " followed by name.
-2 of 4 koans answered.
+2 of 215 koans answered.
 ```
 
 Every class you build is defined once at the top of its file. Methods you
