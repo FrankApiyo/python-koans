@@ -26,6 +26,8 @@ standard library's heapq module does both on an ordinary list:
     heapq.heappop(h)      # 1, the smallest
 
 MinHeap below builds the same thing by hand, one method per koan.
+
+Picture: lessons/svg/17_heap.svg. Every chapter is also on lessons/index.html.
 """
 
 import heapq

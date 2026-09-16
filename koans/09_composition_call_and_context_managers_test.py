@@ -28,6 +28,8 @@ contextlib.contextmanager builds the same thing from a generator (chapter
 as binds, code after the yield is the exit. open(path) returns a file
 handle with read(), close(), and a closed flag. A test that takes tmp_path
 as a parameter is handed an empty folder that pytest deletes afterwards.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 import contextlib

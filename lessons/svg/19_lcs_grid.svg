@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" width="560" height="330" role="img" aria-label="The LCS table for abcde and ace: diagonal + 1 on a match, else the larger of up and left">
+<defs><marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/></marker><marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker></defs>
+<rect width="560" height="330" fill="#fafaf9"/>
+<text x="122.0" y="48" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#6b7280" font-weight="normal">""</text>
+<text x="166.0" y="48" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#6b7280" font-weight="normal">a</text>
+<text x="210.0" y="48" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#6b7280" font-weight="normal">c</text>
+<text x="254.0" y="48" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#6b7280" font-weight="normal">e</text>
+<text x="86" y="87.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">""</text>
+<rect x="100" y="60" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="87.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="60" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="166.0" y="87.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="188" y="60" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="87.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="232" y="60" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="254.0" y="87.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<text x="86" y="131.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">a</text>
+<rect x="100" y="104" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="131.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="104" width="42" height="42" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="166.0" y="131.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="188" y="104" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="131.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="232" y="104" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="254.0" y="131.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<text x="86" y="175.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">b</text>
+<rect x="100" y="148" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="175.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="148" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="166.0" y="175.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="188" y="148" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="175.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="232" y="148" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="254.0" y="175.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<text x="86" y="219.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">c</text>
+<rect x="100" y="192" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="219.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="192" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="166.0" y="219.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="188" y="192" width="42" height="42" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="210.0" y="219.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">2</text>
+<rect x="232" y="192" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="254.0" y="219.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">2</text>
+<text x="86" y="263.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">d</text>
+<rect x="100" y="236" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="263.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="236" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="166.0" y="263.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="188" y="236" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="263.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">2</text>
+<rect x="232" y="236" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="254.0" y="263.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">2</text>
+<text x="86" y="307.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#6b7280" font-weight="normal">e</text>
+<rect x="100" y="280" width="42" height="42" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="122.0" y="307.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">0</text>
+<rect x="144" y="280" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="166.0" y="307.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">1</text>
+<rect x="188" y="280" width="42" height="42" rx="3" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="307.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">2</text>
+<rect x="232" y="280" width="42" height="42" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="254.0" y="307.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="normal">3</text>
+<line x1="134.0" y1="94.0" x2="148.0" y2="108.0" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<line x1="178.0" y1="182.0" x2="192.0" y2="196.0" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<line x1="222.0" y1="270.0" x2="236.0" y2="284.0" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<text x="300" y="80" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#16a34a" font-weight="bold">match: diagonal + 1</text>
+<text x="300" y="100" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">else:  max(up, left)</text>
+<text x="300" y="130" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#6b7280" font-weight="normal">Row 0 and column 0 are the</text>
+<text x="300" y="148" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#6b7280" font-weight="normal">empty prefix: nothing shared.</text>
+<text x="300" y="180" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">Each cell is the answer for two</text>
+<text x="300" y="198" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">prefixes, so the bottom-right</text>
+<text x="300" y="216" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">cell is the answer for the whole.</text>
+<text x="300" y="250" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="start" fill="#1f2937" font-weight="bold">lcs('abcde', 'ace') = 3</text>
+</svg>

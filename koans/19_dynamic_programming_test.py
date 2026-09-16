@@ -29,6 +29,8 @@ then fill each next cell from cells already filled, with no recursion.
 Both turn exponential work into linear. The chapter ends with two problems
 whose tables are less obvious than fib's, so you can see the pattern: name
 the subproblem, decide how a cell depends on earlier cells, fill in order.
+
+Picture: lessons/svg/19_fib_overlap.svg and 19_lcs_grid.svg. Every chapter is also on lessons/index.html.
 """
 
 from conftest import __

@@ -27,6 +27,8 @@ A set is the same structure storing keys with no values.
 
 The HashMap below is built one method at a time. _bucket_for is given.
 Each bucket holds [key, value] pairs as two-element lists.
+
+Picture: lessons/svg/15_hash_buckets.svg. Every chapter is also on lessons/index.html.
 """
 
 from collections import Counter, defaultdict

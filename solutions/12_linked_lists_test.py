@@ -30,6 +30,8 @@ every later item along by one slot.
 
 LinkedList below is built one method at a time. value and next are plain
 attributes on Node, so read and assign them freely.
+
+Picture: lessons/svg/12_linked_list_ops.svg. Every chapter is also on lessons/index.html.
 """
 
 import pytest

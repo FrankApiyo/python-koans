@@ -21,6 +21,8 @@ you can see these shapes as numbers rather than take them on trust.
     counted = Counted([10, 20, 30])
     30 in counted        # compares 10, 20, 30: three steps
     counted.steps        # 3
+
+Picture: lessons/svg/10_growth.svg. Every chapter is also on lessons/index.html.
 """
 
 from conftest import __

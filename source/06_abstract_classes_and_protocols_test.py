@@ -29,6 +29,8 @@ the methods. Annotations like thing: Quacker or -> str are notes; Python
 does not check them when the code runs. Add @runtime_checkable and
 isinstance can check the duck. collections.abc holds ready-made ones such
 as Sized (has __len__) and Iterable (has __iter__).
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 import math

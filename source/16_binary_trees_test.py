@@ -29,6 +29,8 @@ The children of a node are themselves trees, so most tree functions are
 recursive: handle None first, then do something with the node and call
 yourself on each child. The height of a tree is the number of nodes on the
 longest path from the root down to a leaf: 3 above, 0 for None.
+
+Picture: lessons/svg/16_traversals.svg. Every chapter is also on lessons/index.html.
 """
 
 from collections import deque

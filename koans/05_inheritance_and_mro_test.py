@@ -29,6 +29,8 @@ super() means "the next class after this one in the MRO of the object being
 worked on". With one parent that is the parent, so super().__init__(name)
 in Dog runs Animal's __init__. With several parents it can be a sibling
 instead; the last koans show that. isinstance and issubclass walk the MRO.
+
+Picture: lessons/svg/05_mro_diamond.svg. Every chapter is also on lessons/index.html.
 """
 
 import json

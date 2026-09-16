@@ -26,6 +26,8 @@ A directed graph has one-way edges: add_edge with directed=True joins a to b
 only. A weighted graph puts a number on each edge, and finding the cheapest
 route is Dijkstra's algorithm, which is BFS with a heap in place of the
 queue. Chapters 11, 13 and 17 gave you the deque, recursion, and heapq.
+
+Picture: lessons/svg/18_bfs_dfs.svg and 18_dijkstra.svg. Every chapter is also on lessons/index.html.
 """
 
 import heapq

@@ -14,6 +14,8 @@ raises NotImplementedError and the footer points straight at it.
 Each file starts with a lesson like this one. Read it once before the koans.
 Between the lesson, the earlier chapters, and each meditation, you have
 everything a koan needs. Nothing here requires looking anything up.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 from conftest import __

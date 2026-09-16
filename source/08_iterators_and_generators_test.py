@@ -31,6 +31,8 @@ call resumes just after the yield; running off the end is the stop.
 A generator is an iterator. A method is a function, so a class becomes
 iterable by writing __iter__ with a yield in it. Every structure later in
 this course is made iterable that way.
+
+Picture: lessons/svg/08_iterator_protocol.svg. Every chapter is also on lessons/index.html.
 """
 
 from itertools import islice

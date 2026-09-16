@@ -28,6 +28,8 @@ the way tuples do. If the class defines __post_init__, the generated
 __init__ calls it as its last step, which is the place to compute one field
 from the others. The dataclasses module also has asdict, which turns an
 instance into a dict, and replace, which copies one with some fields changed.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 from dataclasses import FrozenInstanceError, asdict, dataclass, field, replace

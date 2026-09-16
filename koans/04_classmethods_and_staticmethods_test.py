@@ -28,6 +28,8 @@ in the class body because it belongs with the class. It sees no self or cls.
 Inside a classmethod, cls(0, 0) calls whichever class it was handed. A
 subclass, written class GridPoint(Point): and starting with everything
 Point has, therefore gets a GridPoint back. Chapter 05 has the details.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 import math

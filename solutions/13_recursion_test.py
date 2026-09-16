@@ -25,6 +25,8 @@ like in practice.
 Every recursive function in this file is written the same way. Name the
 base case first. Then make the recursive call on a smaller piece of the
 problem and trust it to return the right answer for that piece.
+
+Picture: lessons/svg/13_call_stack.svg. Every chapter is also on lessons/index.html.
 """
 
 import functools

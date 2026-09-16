@@ -26,6 +26,8 @@ Bubble sort and insertion sort are simple and quadratic: about n * n steps.
 Merge sort and quick sort split the list and recurse, as in chapter 13, and
 take about n * log2(n) steps, which is why they are the ones used in
 practice.
+
+Picture: lessons/svg/14_binary_search.svg and 14_merge_sort.svg. Every chapter is also on lessons/index.html.
 """
 
 import bisect

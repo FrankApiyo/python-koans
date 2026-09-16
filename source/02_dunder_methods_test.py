@@ -23,6 +23,8 @@ A method that cannot handle the other operand should return NotImplemented,
 the value, so Python can try the other side or raise a clean TypeError.
 
 Money below is built up one dunder at a time. Every koan says which.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 import functools

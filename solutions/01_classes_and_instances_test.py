@@ -22,6 +22,8 @@ class body; rex.speak() is shorthand for Dog.speak(rex).
 
 A variable assigned in the class body, outside any method, is a class
 attribute. Every instance can read it, and it lives in one place.
+
+Picture: lessons/svg/01_attribute_lookup.svg. Every chapter is also on lessons/index.html.
 """
 
 import pytest

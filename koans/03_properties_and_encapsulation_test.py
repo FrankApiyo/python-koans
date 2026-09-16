@@ -28,6 +28,8 @@ can check the value before storing it.
 
 Callers cannot tell a property from a plain attribute. Start plain, and when
 you later need validation or a computed value, switch. No caller changes.
+
+This chapter has no diagram; the lesson is on lessons/index.html too.
 """
 
 import pytest

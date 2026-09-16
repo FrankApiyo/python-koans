@@ -24,6 +24,8 @@ Every structure in the second half is built like the ones here: a class
 holding a plain list or a few pointers, with one method per koan. Where a
 method is given, read it. Where it is blanked, the meditation lists the
 steps. Empty cases raise IndexError, matching what list.pop does.
+
+Picture: lessons/svg/11_stack_queue.svg. Every chapter is also on lessons/index.html.
 """
 
 from collections import deque

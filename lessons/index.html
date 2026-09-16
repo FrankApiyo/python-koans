@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python koans lessons</title>
+<style>
+  :root { --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; --bg: #fafaf9; --code: #f3f4f6; --blue: #2563eb; }
+  body { margin: 0; padding: 24px 20px 80px; background: var(--bg); color: var(--ink); font: 16px/1.55 ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  p.lead { color: var(--muted); margin: 0 0 28px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-bottom: 36px; }
+  nav a { color: var(--blue); text-decoration: none; font-size: 14px; font-family: ui-monospace, Menlo, monospace; }
+  nav a:hover { text-decoration: underline; }
+  section { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 28px; }
+  h2 { font-size: 20px; margin: 0 0 10px; }
+  h2 small { color: var(--muted); font-weight: normal; font-family: ui-monospace, Menlo, monospace; font-size: 13px; margin-right: 8px; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9em; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+  figure { margin: 18px 0 0; }
+  figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Python koans lessons</h1>
+<p class="lead">One short explanation per chapter, with a picture wherever a picture says it faster. Every diagram is a plain SVG under <code>lessons/svg/</code>. The same lesson, in words, is at the top of each koan file.</p>
+
+<nav>
+<a href="#c01">01 classes</a><a href="#c02">02 dunders</a><a href="#c03">03 properties</a><a href="#c04">04 classmethods</a><a href="#c05">05 inheritance</a><a href="#c06">06 abcs</a><a href="#c07">07 dataclasses</a><a href="#c08">08 iterators</a><a href="#c09">09 composition</a><a href="#c10">10 complexity</a><a href="#c11">11 stacks</a><a href="#c12">12 linked lists</a><a href="#c13">13 recursion</a><a href="#c14">14 sorting</a><a href="#c15">15 hash maps</a><a href="#c16">16 trees</a><a href="#c17">17 heaps</a><a href="#c18">18 graphs</a><a href="#c19">19 dp</a><a href="#c20">20 files</a><a href="#c21">21 pipelines</a><a href="#c22">22 threads</a><a href="#c23">23 executors</a><a href="#c24">24 asyncio</a><a href="#c25">25 streams</a>
+</nav>
+
+<section id="c01">
+<h2><small>01</small>Classes and instances</h2>
+<p>A class is a blueprint; calling it makes an instance and runs <code>__init__</code> with the instance as <code>self</code>. Attributes set on <code>self</code> live in that one instance's dict. A name assigned in the class body is a class attribute, shared by every instance. Reading <code>obj.name</code> checks the instance dict first, then the class.</p>
+<figure><img src="svg/01_attribute_lookup.svg" alt="Attribute lookup checks the instance dict, then the class dict"><figcaption>Why <code>rex.species = "wolf"</code> changes Rex and nobody else: it writes the instance dict, and lookup stops there.</figcaption></figure>
+</section>
+
+<section id="c02">
+<h2><small>02</small>Dunder methods</h2>
+<p>Operators and builtins are calls to double-underscore methods: <code>len(x)</code> is <code>x.__len__()</code>, <code>x == y</code> is <code>x.__eq__(y)</code>, <code>x + y</code> is <code>x.__add__(y)</code>. <code>__repr__</code> is for developers and should look like the constructor call; <code>__str__</code> is for people. Defining <code>__eq__</code> deletes the default <code>__hash__</code>, so define both over the same fields. Return <code>NotImplemented</code> for operands you do not understand.</p>
+</section>
+
+<section id="c03">
+<h2><small>03</small>Properties and encapsulation</h2>
+<p>Nothing is private. A leading underscore asks readers not to touch. <code>@property</code> makes a method read like an attribute, and a setter runs code on assignment, so you can start with a plain attribute and add validation later without changing a single caller. Two leading underscores mangle the name to <code>_Class__name</code>; that avoids clashes, it does not hide.</p>
+</section>
+
+<section id="c04">
+<h2><small>04</small>Classmethods and staticmethods</h2>
+<p>A method gets the instance. <code>@classmethod</code> gets the class as <code>cls</code>, which is what you want for alternate constructors like <code>from_string</code>, because <code>cls(...)</code> builds whatever subclass it was called on. <code>@staticmethod</code> gets nothing: a plain function that lives in the class because it belongs near it.</p>
+</section>
+
+<section id="c05">
+<h2><small>05</small>Inheritance and the MRO</h2>
+<p><code>class Dog(Animal)</code> means a Dog is an Animal. Lookup walks the method resolution order and stops at the first class that has the name. <code>super()</code> is not "the parent": it is the next class in the MRO of the object, which with multiple inheritance can be a sibling.</p>
+<figure><img src="svg/05_mro_diamond.svg" alt="The diamond D(B, C) and the linear MRO Python derives from it"><figcaption>The diamond. Python lists each class once with every class before its parents, so a chain of <code>super().__init__()</code> calls runs A exactly once.</figcaption></figure>
+</section>
+
+<section id="c06">
+<h2><small>06</small>Abstract classes and protocols</h2>
+<p>An ABC lists methods subclasses must provide, marked <code>@abstractmethod</code>; Python refuses to instantiate a class that still has one. Duck typing needs no base class at all: a function uses whatever has the methods it calls. <code>typing.Protocol</code> writes the duck down; <code>@runtime_checkable</code> lets <code>isinstance</code> check it. <code>collections.abc</code> ships ready-made ones like <code>Sized</code> and <code>Iterable</code>.</p>
+</section>
+
+<section id="c07">
+<h2><small>07</small>Dataclasses</h2>
+<p><code>@dataclass</code> reads the annotated fields and writes <code>__init__</code>, <code>__repr__</code> and <code>__eq__</code>. Defaults come after required fields. A mutable default is refused; use <code>field(default_factory=list)</code>. <code>frozen=True</code> makes instances read-only and hashable, <code>order=True</code> adds comparisons field by field, and <code>__post_init__</code> is where a field is computed from the others.</p>
+</section>
+
+<section id="c08">
+<h2><small>08</small>Iterators and generators</h2>
+<p>A <code>for</code> loop calls <code>iter()</code> once, then <code>next()</code> until <code>StopIteration</code>. An iterable has <code>__iter__</code>; an iterator also has <code>__next__</code>. A function with <code>yield</code> returns a generator, which is an iterator that keeps its own place. Every structure in the second half is made iterable by an <code>__iter__</code> written with <code>yield</code>.</p>
+<figure><img src="svg/08_iterator_protocol.svg" alt="A for loop calls iter once, then next until StopIteration"><figcaption>What <code>for</code> does behind the scenes. A list survives a second loop because <code>iter()</code> hands out a fresh iterator; an iterator is used up after one pass.</figcaption></figure>
+</section>
+
+<section id="c09">
+<h2><small>09</small>Composition, <code>__call__</code>, context managers</h2>
+<p>Inheritance is is-a; composition is has-a. Keep another object as an attribute and forward the calls you need. <code>__getattr__</code> runs only when normal lookup fails, so one of them can forward everything else. <code>__call__</code> makes an instance callable. <code>with</code> runs <code>__enter__</code>, the block, then <code>__exit__</code> always, handing it any exception; <code>contextlib.contextmanager</code> builds the same thing from a generator with one <code>yield</code>.</p>
+</section>
+
+<section id="c10">
+<h2><small>10</small>Complexity</h2>
+<p>Big-O names the shape of growth in steps as the input size n grows, not the seconds. A list index is O(1). Searching a list is O(n). Comparing every pair is O(n²). Searching a set is O(1) on average because a hash picks the slot.</p>
+<figure><img src="svg/10_growth.svg" alt="Growth of step count against input size for four Big-O shapes"><figcaption>The four shapes that keep coming back. The gap between O(n) and O(n²) is the difference between a loop and a loop inside a loop.</figcaption></figure>
+</section>
+
+<section id="c11">
+<h2><small>11</small>Stacks and queues</h2>
+<p>A stack is last in, first out: push and pop at the same end, which is the end of a list. A queue is first in, first out: join at the back, leave from the front. A list is a bad queue because removing index 0 shifts everything; <code>collections.deque</code> is cheap at both ends.</p>
+<figure><img src="svg/11_stack_queue.svg" alt="A stack pushes and pops at the same end; a queue joins at the back and leaves from the front"><figcaption>Both are one list plus a rule about which end you touch.</figcaption></figure>
+</section>
+
+<section id="c12">
+<h2><small>12</small>Linked lists</h2>
+<p>Each item sits in its own node with a pointer to the next; the list is one pointer to the first node. Every operation is a walk from <code>head</code> following <code>next</code> until <code>None</code>. Changing the list means changing pointers, not moving items.</p>
+<figure><img src="svg/12_linked_list_ops.svg" alt="insert_after moves two pointers; reverse walks with prev, current and next_node"><figcaption>Splicing in is two assignments. Reversing is one walk with three pointers; save <code>next_node</code> before turning <code>current.next</code> around or the rest of the list is gone.</figcaption></figure>
+</section>
+
+<section id="c13">
+<h2><small>13</small>Recursion</h2>
+<p>A recursive function calls itself on a smaller piece. It needs a base case that returns without recursing, and every other call must move toward it. Each call gets its own frame on a stack; frames pile up to the base case, then unwind. Around a thousand frames Python raises <code>RecursionError</code>.</p>
+<figure><img src="svg/13_call_stack.svg" alt="factorial(3) pushes four frames, then each returns into the one below"><figcaption>Nothing is multiplied on the way down. Every frame waits, and the answers are built on the way back up.</figcaption></figure>
+</section>
+
+<section id="c14">
+<h2><small>14</small>Searching and sorting</h2>
+<p>Linear search checks every item. Binary search needs a sorted list and throws away half at each look: about 20 looks for a million items. Bubble and insertion sort are simple and O(n²). Merge sort and quick sort split the list, recurse, and put the pieces back together in O(n log n). Every comparison is <code>&lt;</code>, so a class with <code>__lt__</code> sorts.</p>
+<figure><img src="svg/14_binary_search.svg" alt="Binary search for 10 halves the sorted list at each step"><figcaption>lo and hi bracket what is still worth looking at. The loop ends when they cross.</figcaption></figure>
+<figure><img src="svg/14_merge_sort.svg" alt="Merge sort splits down to single items and merges sorted halves back up"><figcaption>Split until every piece is trivially sorted, then merge pairs of sorted pieces. Each level does n work and there are log n levels.</figcaption></figure>
+</section>
+
+<section id="c15">
+<h2><small>15</small>Hash maps and sets</h2>
+<p>A dict is a list of buckets. <code>hash(key) % len(buckets)</code> picks one bucket; the pair goes in it. Lookup computes the same index and walks that one short bucket comparing keys with <code>==</code>. Two keys in one bucket is a collision and is normal. When pairs outnumber buckets, double the buckets and re-place everything. A set is the same structure with keys only.</p>
+<figure><img src="svg/15_hash_buckets.svg" alt="A key is hashed, reduced modulo the bucket count, and found by walking one bucket"><figcaption>Why <code>__hash__</code> and <code>__eq__</code> must agree: hash chooses the bucket, equality finds the key inside it.</figcaption></figure>
+</section>
+
+<section id="c16">
+<h2><small>16</small>Binary trees</h2>
+<p>Each node has up to two children. In a binary search tree everything left of a node is smaller and everything right is larger, so a lookup walks down one path, discarding half the tree per step. Most tree functions are recursive: handle <code>None</code>, then the node, then each child. Height is the longest path from root to leaf.</p>
+<figure><img src="svg/16_traversals.svg" alt="The same tree visited in four orders; the badge on each node is its visit number"><figcaption>The only difference between the first three is where the node's own value goes relative to its children. Level order uses a queue instead of recursion.</figcaption></figure>
+</section>
+
+<section id="c17">
+<h2><small>17</small>Heaps</h2>
+<p>A min-heap is a tree with one rule: every parent is no larger than its children, so the smallest item is always the root. It lives in a plain list, row by row, and the parent and child links are index arithmetic. Push appends and sifts up; pop moves the last item to the root and sifts down. Both are O(log n). <code>heapq</code> does the same on any list.</p>
+<figure><img src="svg/17_heap.svg" alt="A heap as a tree and as the list that stores it, with one sift-down traced"><figcaption>There are no pointers. The tree shape is entirely in the index formulas.</figcaption></figure>
+</section>
+
+<section id="c18">
+<h2><small>18</small>Graphs</h2>
+<p>Nodes joined by edges, stored as a dict from each node to its neighbours. Breadth-first search uses a queue and reaches every node by a shortest path. Depth-first search follows one path to its end, by recursion or a stack. Both need a seen set because graphs have cycles. Dijkstra is BFS with a heap keyed by distance, for weighted edges.</p>
+<figure><img src="svg/18_bfs_dfs.svg" alt="BFS and DFS from A on the example graph; badges are visit order, F is unreachable"><figcaption>Same graph, same start, different order. F is never reached by either because no edge leads to it.</figcaption></figure>
+<figure><img src="svg/18_dijkstra.svg" alt="Dijkstra relaxes the cheapest known node first; the route via C beats the direct edge to B"><figcaption>Always pop the cheapest entry. A node's distance is final when popped; a stale entry for it later is skipped.</figcaption></figure>
+</section>
+
+<section id="c19">
+<h2><small>19</small>Dynamic programming</h2>
+<p>When a problem breaks into smaller copies of itself and the same copies recur, solve each once. Memoisation is top down: recurse, but check a dict before recomputing. Tabulation is bottom up: fill a table from the smallest cases with no recursion. Name the subproblem, decide how a cell depends on earlier cells, fill in order.</p>
+<figure><img src="svg/19_fib_overlap.svg" alt="fib(5) computes fib(3) twice and fib(2) three times; memoisation keeps one of each"><figcaption>The repeated subtrees are the waste. A memo dict collapses each colour to one computation.</figcaption></figure>
+<figure><img src="svg/19_lcs_grid.svg" alt="The LCS table for abcde and ace: diagonal + 1 on a match, else the larger of up and left"><figcaption>Longest common subsequence as a grid. Each cell is the answer for two prefixes, so the last cell is the answer for the whole.</figcaption></figure>
+</section>
+
+<section id="c20">
+<h2><small>20</small>Files, bytes and text</h2>
+<p><code>open()</code> returns a cursor into the file, not its contents. <code>read()</code> takes everything from the cursor to the end; <code>read(n)</code> takes at most <code>n</code>, the last piece is short, and the empty value after it is the signal to stop. Mode <code>"r"</code> decodes bytes into <code>str</code> with an encoding, <code>"rb"</code> hands over raw <code>bytes</code>, and the wrong encoding raises <code>UnicodeDecodeError</code>. A file object is an iterator, so a <code>for</code> loop yields one line at a time in constant memory; <code>io.StringIO</code> and <code>io.BytesIO</code> are the same interface in memory, and <code>with</code> closes the file on the way out.</p>
+</section>
+
+<section id="c21">
+<h2><small>21</small>Generator pipelines</h2>
+<p>A stage is a generator that takes an iterable and yields its own values. Chain stages and one item flows all the way through before the next is read from the source, so a ten-line file and a ten-million-line file cost the same memory. <code>map</code>, <code>filter</code>, <code>itertools.chain</code>, <code>islice</code>, <code>takewhile</code> and <code>groupby</code> are ready-made lazy stages, and an infinite source is fine as long as a later stage stops. <code>gen.send(value)</code> makes a paused <code>yield</code> evaluate to <code>value</code> after a priming <code>next()</code>; <code>gen.close()</code> raises <code>GeneratorExit</code> at the pause so a <code>finally</code> around the yield still runs. <code>Pipeline(source) | stage | stage</code> is <code>__or__</code> from chapter 02 wrapping each stage around the last.</p>
+</section>
+
+<section id="c22">
+<h2><small>22</small>Threads, locks and queues</h2>
+<p>A thread is a second line of execution that shares every object with the one that started it. <code>Thread(target=f).start()</code> begins it and <code>join()</code> waits for it. Sharing is the danger: <code>counter += 1</code> is read, add, write, and two threads that both read before either writes lose an update. <code>with lock:</code> lets one thread at a time through the block, and an <code>RLock</code> lets its owner back in. The GIL means threads only overlap while they wait, so they help sleeping and I/O, not arithmetic. <code>queue.Queue</code> hands work between threads safely; a <code>None</code> sentinel stops a worker, and <code>queue.join()</code> waits until every item is marked <code>task_done</code>.</p>
+<figure><img src="svg/22_race_interleaving.svg" alt="Two threads each read, add one and write a shared counter; interleaved, one increment is lost"><figcaption>Both threads read 0 before either writes, so both write 1. Two increments, one counted. A lock makes read, add and write one uninterruptible step.</figcaption></figure>
+</section>
+
+<section id="c23">
+<h2><small>23</small>Executors and futures</h2>
+<p>An executor owns a pool of workers. <code>submit</code> hands it a callable and returns a <code>Future</code> at once; <code>result()</code> waits for the value, and re-raises anything the callable raised. <code>map</code> returns results in input order, <code>as_completed</code> yields futures in the order they finish, and leaving the <code>with</code> block waits for every task. <code>ThreadPoolExecutor</code> shares one interpreter, so it helps work that waits; <code>ProcessPoolExecutor</code> starts separate processes, each with its own GIL, so work that computes runs in parallel, at the cost of pickling arguments and results across.</p>
+</section>
+
+<section id="c24">
+<h2><small>24</small>asyncio: coroutines and tasks</h2>
+<p>A coroutine is interrupted only where it says so, at an <code>await</code>; one thread and one event loop take turns between many of them. Calling an <code>async def</code> runs nothing, like calling a generator; <code>asyncio.run</code> drives it, and <code>await</code> pauses here until the value arrives, so sequential awaits run one after the other. <code>gather</code>, <code>create_task</code> and <code>TaskGroup</code> wrap coroutines in tasks that run together; a failing task cancels its siblings, <code>asyncio.timeout</code> cancels on a deadline, and a cancelled task sees <code>CancelledError</code> at its await. <code>time.sleep</code> is not an await, so it freezes every task; <code>asyncio.sleep</code> hands control back.</p>
+<figure><img src="svg/24_event_loop.svg" alt="One event loop runs two tasks; each await hands control back and the loop resumes the task later"><figcaption>Two tasks, one loop. Each <code>await</code> hands control back to the loop, which runs whoever is ready and resumes the task later; nothing switches between awaits.</figcaption></figure>
+</section>
+
+<section id="c25">
+<h2><small>25</small>Async iteration, queues and streams</h2>
+<p><code>async for</code> is <code>for</code> with an <code>await</code> in each step: it calls <code>__aiter__</code> once, then awaits <code>__anext__</code> until <code>StopAsyncIteration</code>. A <code>yield</code> inside <code>async def</code> makes an async generator, which may await between values. <code>asyncio.Queue</code> is chapter 22's queue for tasks: <code>await q.get()</code> parks the consumer until a put arrives, and <code>task_done()</code> with <code>await q.join()</code> replaces the sentinel. A stream is a socket behind a reader and a writer: <code>start_server</code> on port 0 lets the OS choose, <code>write()</code> only buffers and <code>await drain()</code> waits until the buffer has emptied enough to keep writing, and empty bytes from <code>readline()</code> or <code>read()</code> mean the other side sent <code>write_eof()</code> or closed.</p>
+</section>
+</main>
+</body>
+</html>

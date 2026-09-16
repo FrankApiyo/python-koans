@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" role="img" aria-label="fib(5) computes fib(3) twice and fib(2) three times; memoisation keeps one of each">
+<defs><marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/></marker><marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker></defs>
+<rect width="1000" height="300" fill="#fafaf9"/>
+<circle cx="330" cy="30" r="17" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<text x="330" y="34" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f5</text>
+<line x1="330" y1="47" x2="170" y2="73" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="170" cy="90" r="17" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<text x="170" y="94" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f4</text>
+<line x1="170" y1="107" x2="90.0" y2="133" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="90.0" cy="150" r="17" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+<text x="90.0" y="154" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f3</text>
+<line x1="90.0" y1="167" x2="50.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="50.0" cy="210" r="17" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="50.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f2</text>
+<line x1="50.0" y1="227" x2="30.0" y2="253" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="30.0" cy="270" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="30.0" y="274" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f1</text>
+<line x1="50.0" y1="227" x2="70.0" y2="253" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="70.0" cy="270" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="70.0" y="274" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f0</text>
+<line x1="90.0" y1="167" x2="130.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="130.0" cy="210" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="130.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f1</text>
+<line x1="170" y1="107" x2="250.0" y2="133" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="250.0" cy="150" r="17" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="250.0" y="154" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f2</text>
+<line x1="250.0" y1="167" x2="210.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="210.0" cy="210" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="210.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f1</text>
+<line x1="250.0" y1="167" x2="290.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="290.0" cy="210" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="290.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f0</text>
+<line x1="330" y1="47" x2="490" y2="73" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="490" cy="90" r="17" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+<text x="490" y="94" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f3</text>
+<line x1="490" y1="107" x2="410.0" y2="133" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="410.0" cy="150" r="17" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="410.0" y="154" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f2</text>
+<line x1="410.0" y1="167" x2="370.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="370.0" cy="210" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="370.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f1</text>
+<line x1="410.0" y1="167" x2="450.0" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="450.0" cy="210" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="450.0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f0</text>
+<line x1="490" y1="107" x2="570.0" y2="133" stroke="#6b7280" stroke-width="1.5"/>
+<circle cx="570.0" cy="150" r="17" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="570.0" y="154" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="normal">f1</text>
+<text x="660" y="60" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">fib(3) is the orange subtree,</text>
+<text x="660" y="78" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#ea580c" font-weight="normal">computed twice.</text>
+<text x="660" y="106" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">fib(2) is the blue subtree,</text>
+<text x="660" y="124" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#2563eb" font-weight="normal">computed three times.</text>
+<text x="660" y="160" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">With a memo dict each subtree</text>
+<text x="660" y="178" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="normal">runs once; later asks return</text>
+<text x="660" y="196" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#1f2937" font-weight="bold">from the dict. 15 calls become 9.</text>
+<text x="660" y="232" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#6b7280" font-weight="normal">A table fills fib(0), fib(1), ... up</text>
+<text x="660" y="250" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" text-anchor="start" fill="#6b7280" font-weight="normal">to fib(n) with no recursion at all.</text>
+</svg>
