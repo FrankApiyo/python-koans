@@ -6,12 +6,13 @@ inheritance, abstract classes, dataclasses, and iterators. The second is
 data structures and algorithms: stacks, linked lists, recursion, sorting,
 hash maps, trees, heaps, graphs, and dynamic programming. The third is
 streams and concurrency: files, generator pipelines, threads, executors,
-and asyncio through to sockets. Every file in
+and asyncio through to sockets, ending with how such code is tested with
+mocks and patches. Every file in
 `koans/` is a chain of tiny tests with a blank in each one. Fill the blank,
 run, read the next meditation. When every koan passes you are done, and you
 can wipe the answers and go again.
 
-There are 282 koans in 26 chapters, planned as seven mornings of two
+There are 300 koans in 27 chapters, planned as seven mornings of two
 hours, three or four chapters a morning. Nothing needs a browser or the
 network; the socket koans talk to themselves on localhost. Python 3.13 or
 newer is required. Each file opens with
@@ -86,7 +87,7 @@ blank itself, not at the assertion below it:
 ------------------------------- The master says --------------------------------
 Meditate on koans/00_about_koans_test.py:34
     Implement Greeter.greet above. 1. Replace the whole __() line with a return of the string "hello " followed by name.
-2 of 282 koans answered.
+2 of 300 koans answered.
 ```
 
 Every class you build is defined once at the top of its file. Methods you
@@ -104,7 +105,7 @@ and every method already written is there to lean on.
 | 4 | 14 searching and sorting, 15 hash maps and sets, 16 binary trees |
 | 5 | 17 heaps, 18 graphs, 19 dynamic programming |
 | 6 | 20 files, bytes and text, 21 generator pipelines, 22 threads, locks and queues |
-| 7 | 23 executors and futures, 24 asyncio coroutines and tasks, 25 async iteration, queues and streams |
+| 7 | 23 executors and futures, 24 asyncio coroutines and tasks, 25 async iteration, queues and streams, 26 pytest mocks and patches |
 
 Value koans take about a minute. Implementation koans take about five. If a
 morning runs long, stop at a chapter boundary. Chapter 08 is the hinge
@@ -112,7 +113,8 @@ between the first two parts: it teaches iterators as objects, and every structur
 after it is iterable because of what it taught. Chapter 21 is the second
 hinge: the generators of chapter 08 become pipelines, and chapters 22 to 25
 carry the same producer-and-consumer idea across threads, pools, and the
-event loop.
+event loop. Chapter 26 closes with the tests: how a mock records a call at
+the boundary and how patch swaps a name in for the length of one test.
 
 ## Pictures
 
