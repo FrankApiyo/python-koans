@@ -212,3 +212,10 @@ move a pointer forward, or returning inside a loop that should finish.
 and a `# <<<` line, which becomes one `__()` line in `koans/`.
 `python tools/generate.py` writes `koans/` and `solutions/` from it. `pytest tests/` proves every solution passes, every blank fails, and
 the generated files are current.
+
+## Licence
+
+The code is under the Apache License 2.0 (see `LICENSE` and `NOTICE`). The lesson text,
+comments that teach, pictures and README prose are under Creative Commons Attribution 4.0
+(see `LICENSE-lessons`). To credit this work, write "Python koans by Frankline Apiyo" and link to
+this repository.
