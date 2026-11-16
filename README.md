@@ -21,23 +21,26 @@ a lesson, and each koan's meditation says what to do.
 ## Setup
 
 ```sh
+git clone https://github.com/FrankApiyo/python-koans.git
 cd python-koans
 uv venv
 uv pip install -r pyproject.toml
 source .venv/bin/activate
-nvim
 ```
 
-Open nvim from this directory with the venv activated, so the test runner and
-the Conjure REPL use `.venv/bin/python`. Starting in the repo root is required, because
-the REPL imports the blank from `conftest.py` relative to that directory.
+Any editor works, with the koans run from a terminal (the commands are
+below). In Neovim, [vim-test](https://github.com/vim-test/vim-test) with its
+default runners runs them from the file you are in. Activate the venv before
+you start the editor, so that the test runner and any REPL use
+`.venv/bin/python`. Start the editor in the repo root, because the REPL
+imports the blank from `conftest.py` relative to that directory.
 
 Do not run `uv sync`. It writes a `uv.lock`, and vim-test switches to
 `uv run pytest` the moment it sees one.
 
 ## The loop
 
-Open `koans/00_about_koans_test.py` and press `<leader>ts`. That runs the
+Open `koans/00_about_koans_test.py` and run `pytest -x`. That runs the
 whole suite, in order, and stops at the first koan that fails. The bottom of
 the output looks like this:
 
@@ -51,18 +54,17 @@ Meditate on koans/00_about_koans_test.py:8
 Go to that line, read the docstring above it, replace `__`, save, run again.
 When the last one passes the footer changes to `Enlightenment`.
 
-Suggested vim-test keymaps, run in a neoterm pane:
+| vim-test       | Runs                             | In a terminal              |
+| -------------- | -------------------------------- | -------------------------- |
+| `:TestSuite`   | the whole suite                  | `pytest`                   |
+| `:TestFile`    | the file you are in              | `pytest <file>`            |
+| `:TestNearest` | the single koan under the cursor | `pytest <file>::<test>`    |
+| `:TestLast`    | whatever you ran last            | the same command again     |
 
-| Keys         | Runs                                           |
-| ------------ | ---------------------------------------------- |
-| `<leader>ts` | the whole suite, stopping at the first failure |
-| `<leader>tf` | the file you are in                            |
-| `<leader>tt` | the single koan under the cursor               |
-| `<leader>tl` | whatever you ran last                          |
-
-The output opens in a 15-line split at the bottom and scrolls to the end
-on its own. If you ever see tests running under Homebrew's Python instead, you
-started nvim somewhere other than the repo root.
+Map them to keys if you like, for example `<leader>ts`, `<leader>tf`,
+`<leader>tt` and `<leader>tl`. If you ever see tests running under the
+system Python instead of the venv, activate `.venv` and start the editor
+again from the repo root.
 
 ## Two kinds of blank
 
@@ -143,9 +145,10 @@ pass. Evaluate the pieces in a REPL first.
 
 ### Conjure
 
-Conjure's Python client starts a REPL the moment you open a Python buffer.
-With the venv activated, that REPL is `.venv/bin/python`. The keys below
-assume `,` as the local leader.
+If you use [Conjure](https://github.com/Olical/conjure), its Python client
+starts a REPL the moment you open a Python buffer. Start nvim with the venv
+activated so that REPL runs `.venv/bin/python`. The keys below assume your
+local leader is `,`.
 
 | Keys             | Does                                              |
 | ---------------- | ------------------------------------------------- |
@@ -170,12 +173,13 @@ is:
 If you started nvim outside the repo and then changed directory, the REPL is
 already running on the wrong Python. Restart it with `,cS` then `,cs`.
 
-### neoterm, if you prefer ipython
+### A terminal split, if you prefer ipython
 
-`:vert Tnew` opens a terminal in a split. Then `:TREPLSendLine` on any line,
-or select lines and `:'<,'>TREPLSendSelection`, sends them across. neoterm
-launches ipython for you on the first send. Do not start ipython by hand
-first, or the launch command gets typed into your running session.
+Run `ipython` from the repo root in a terminal split next to your editor or
+in a separate terminal. With [neoterm](https://github.com/kassio/neoterm),
+`:vert Tnew` opens the split, and `:TREPLSendLine` or
+`:'<,'>TREPLSendSelection` sends lines across. Any other terminal plugin
+works as well.
 
 ## Starting over
 
